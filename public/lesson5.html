@@ -78,7 +78,7 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
-                <button class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary">Submit</button>
             </form>
 
         </div>
@@ -90,7 +90,8 @@
             <p id="email-output"></p>
             <br>
             <h4 id = "password-label">Password:</h4>
-            
+            <p id="password-output"></p>
+
         </div>
         <!-- /#second -->
     </div>
@@ -105,23 +106,38 @@
         //Lets change some content and a little styles
 
         //Let's get ahold of all of these elements
-
+          var emailInput = document.getElementById("email");
+          var passwordInput = document.getElementById("password");
+          var button = document.querySelector("button.btn-primary");
+          var emailOutput = document.querySelector("#email-output");
+          var passwordOutput = document.querySelector("#password-output");
         //Let's write a handling function for the button click
+        function clickHandler(){
             //use the elements from the form and get their values
-            //apply that value as the innerText for the output respective output portions
+            var emailValue = emailInput.value;
+            var passwordValue = passwordInput.value;
+            //apply that value as the innerText for the respective output portions
+            emailOutput.innerText = emailValue;
+            passwordOutput.innerText = passwordValue;
             //add a little styling
-        //Let's attach an eventListener to the button for the click event
+            emailOutput.style.backgroundColor = "chartreuse"
+            passwordOutput.style.backgroundColor = "bisque"
 
+          }
+        //Let's attach an eventListener to the button for the click event
+        button.addEventListener("click", clickHandler);
 /*
         Assignment:
             - Add another form input of your choice... Maybe age or name?
+              var nameInput = Document.getElementsByClassName("name");
             - Get a reference to the DOM element and assign that a variable
+            console.log()
             - Add code to the click handler so that you achieve the following:
                     - You update a value in the output section of your page
                     - You alter the styles of the output for your field with the following
                         --> Your font color is red
                         --> Your element has a black background color
-                        --> The element is added using JavaScript to your page under the already present output portions.
+                        --> The element is added using JavaScript to your page under the already present output portions.(Discard this as per Justin)
 */
     </script>
 </body>
